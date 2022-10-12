@@ -1,0 +1,12 @@
+C:\Users\kbogacz\Documents\WPF-Lessons\WPF-Pokedex-data-access\bin\Debug\net6.0\WPF-Pokedex-data-access.deps.json
+C:\Users\kbogacz\Documents\WPF-Lessons\WPF-Pokedex-data-access\bin\Debug\net6.0\WPF-Pokedex-data-access.dll
+C:\Users\kbogacz\Documents\WPF-Lessons\WPF-Pokedex-data-access\bin\Debug\net6.0\WPF-Pokedex-data-access.pdb
+C:\Users\kbogacz\Documents\WPF-Lessons\WPF-Pokedex-data-access\obj\Debug\net6.0\WPF-Pokedex-data-access.csproj.AssemblyReference.cache
+C:\Users\kbogacz\Documents\WPF-Lessons\WPF-Pokedex-data-access\obj\Debug\net6.0\WPF-Pokedex-data-access.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kbogacz\Documents\WPF-Lessons\WPF-Pokedex-data-access\obj\Debug\net6.0\WPF-Pokedex-data-access.AssemblyInfoInputs.cache
+C:\Users\kbogacz\Documents\WPF-Lessons\WPF-Pokedex-data-access\obj\Debug\net6.0\WPF-Pokedex-data-access.AssemblyInfo.cs
+C:\Users\kbogacz\Documents\WPF-Lessons\WPF-Pokedex-data-access\obj\Debug\net6.0\WPF-Pokedex-data-access.csproj.CoreCompileInputs.cache
+C:\Users\kbogacz\Documents\WPF-Lessons\WPF-Pokedex-data-access\obj\Debug\net6.0\WPF-Pokedex-data-access.dll
+C:\Users\kbogacz\Documents\WPF-Lessons\WPF-Pokedex-data-access\obj\Debug\net6.0\refint\WPF-Pokedex-data-access.dll
+C:\Users\kbogacz\Documents\WPF-Lessons\WPF-Pokedex-data-access\obj\Debug\net6.0\WPF-Pokedex-data-access.pdb
+C:\Users\kbogacz\Documents\WPF-Lessons\WPF-Pokedex-data-access\obj\Debug\net6.0\ref\WPF-Pokedex-data-access.dll

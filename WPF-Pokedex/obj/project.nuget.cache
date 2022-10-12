@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "KiL0QGF0Q4cRJBnPeOp3hC+kQNu/CinKn+Ay+VrnVysGnpmsYOqlBRxQVrwl6c+3iFVeAzja1ZbuxJNBrCId4w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\kbogacz\\Documents\\WPF-Lessons\\WPF-Pokedex\\WPF-Pokedex.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kbogacz\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512",
+    "C:\\Users\\kbogacz\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\kbogacz\\.nuget\\packages\\prism.core\\8.1.97\\prism.core.8.1.97.nupkg.sha512"
+  ],
+  "logs": []
+}
