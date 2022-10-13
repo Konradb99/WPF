@@ -16,7 +16,7 @@ namespace WPF_Pokedex_data_access.Repository
             TypeListResponse responseResult = JsonConvert.DeserializeObject<TypeListResponse>(responseBody);
             foreach(var obj in responseResult.results)
             {
-                obj.name = obj.name.ToUpper();
+                obj.name = $"{obj.name[0].ToString().ToUpper()}{obj.name.Substring(1)}";
             }
             return responseResult.results;
         }
