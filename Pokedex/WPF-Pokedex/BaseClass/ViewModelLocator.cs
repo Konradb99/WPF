@@ -26,7 +26,7 @@ namespace WPF_Pokedex
         static void AutoWireViewModelChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var viewTypeName = d.GetType().FullName;
-            var viewModelTypeName = viewTypeName + "ViewModel";
+            var viewModelTypeName = viewTypeName + "Model";
 
             var viewModelType = Type.GetType(viewModelTypeName);
             var viewModel = Activator.CreateInstance(viewModelType);

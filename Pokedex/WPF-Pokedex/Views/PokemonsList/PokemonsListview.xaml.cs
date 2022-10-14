@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WPF_Pokedex.TypeList
+namespace WPF_Pokedex.Views.PokemonsList
 {
     /// <summary>
-    /// Interaction logic for TypeList.xaml
+    /// Interaction logic for PokemonsListview.xaml
     /// </summary>
-    public partial class TypeList : UserControl
+    public partial class PokemonsListView : UserControl
     {
-        public TypeList()
+        public PokemonsListView()
         {
             InitializeComponent();
         }

@@ -17,24 +17,42 @@ namespace WPF_Pokedex.TypeList
     {
         ITypeRepository _repository = new TypeRepository();
 
+        public event PropertyChangedEventHandler PropertyChanged;
+        public TypeListViewModel()
+        {
+            LoadData();
+        }
+
+        private TypeListEntity _selectedType;
+        public TypeListEntity SelectedType
+        {
+            get
+            {
+                return _selectedType;
+            }
+            set
+            {
+                //Types.Remove(value);
+            }
+        }
+
+        private void OnChange()
+        {
+            types.Remove(_selectedType);
+        }
+
         private ObservableCollection<TypeListEntity> types;
         public ObservableCollection<TypeListEntity> Types
         {
             get { return types; }
             set
             {
-                if (this.types != value)
+                if (types != value)
                 {
-                    this.types = value;
-                    this.NotifyPropertyChanged("Types");
+                    types = value;
+                    NotifyPropertyChanged("Types");
                 }
             }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        public TypeListViewModel()
-        {
-            LoadData();
         }
 
         private async void LoadData()
