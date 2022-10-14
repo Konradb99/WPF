@@ -14,38 +14,80 @@
         <ListView ItemsSource="{Binding Types}">
             <ListView.Style>
                 <Style TargetType="ListView">
-                    <Setter Property="Background" Value="#D2D2D2"/>
+                    <Setter Property="Background" Value="#00A3FF"/>
                     <Setter Property="BorderThickness" Value="0"/>
                 </Style>
             </ListView.Style>
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
-                    <Setter Property="Margin" Value="10,0,0,-3"/>
+                    <Style.Triggers>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="true" />
+                                <Condition Property="Selector.IsSelectionActive" Value="true" />
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background" Value="#3075E1"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                            <Setter Property="Foreground" Value="#E7E7E7"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="Margin" Value="0, 0, -2, 0"/>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" Value="True"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background" Value="#3075E1"/>
+                            <Setter Property="FontWeight" Value="Bold"/>s
+                            <Setter Property="Foreground" Value="#E7E7E7"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="Margin" Value="0, 0, -2, 0"/>
+                        </MultiTrigger>
+                    </Style.Triggers>
                     <Setter Property="Height" Value="50px"/>
-                    <Setter Property="Padding" Value="0,5,0,5"/>
                     <Setter Property="FontSize" Value="28px"/>
                     <Setter Property="FontWeight" Value="Normal"/>
-                    <Setter Property="Foreground" Value="#151515"/>
+                    <Setter Property="Foreground" Value="#EBEBEB"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type ListViewItem}">
+                                <Border
+                         BorderBrush="Transparent"
+                         BorderThickness="0"
+                         Background="{TemplateBinding Background}">
+                                    <GridViewRowPresenter 
+                                        HorizontalAlignment="Stretch" 
+                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                                        Width="Auto" 
+                                        Margin="0" 
+                                        Content="{TemplateBinding Content}"
+                                     />
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
                 </Style>
+                
             </ListView.ItemContainerStyle>
             <ListView.View>
-                <GridView AllowsColumnReorder="true" ColumnHeaderToolTip="Employee Information">
+                <GridView AllowsColumnReorder="true">
                     <GridView.ColumnHeaderContainerStyle>
                         <Style TargetType="GridViewColumnHeader">
-                            <Setter Property="Background" Value="#D2D2D2"/>
-                            <Setter Property="Margin" Value="10,-2,2,-2"/>
-                            <Setter Property="Height" Value="50px"/>
-                            <Setter Property="FontSize" Value="34px"/>
-                            <Setter Property="Foreground" Value="#0094FF"/>
+                            <Setter Property="Background" Value="#3075E1"/>
+                            <Setter Property="Margin" Value="-2, -5, -5, -5"/>
+                            <Setter Property="Padding" Value="10px, 0px, 0px, 10px"/>
+                            <Setter Property="Height" Value="80px"/>
+                            <Setter Property="FontSize" Value="32px"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                            <Setter Property="Foreground" Value="#E7E7E7"/>
                             <Setter Property="HorizontalContentAlignment" Value="Left"/>
+
                         </Style>
                     </GridView.ColumnHeaderContainerStyle>
                     <GridViewColumn
                         DisplayMemberBinding="{Binding Path=name}"
                         Header="Pokemon Type"
-                        Width="250"
+                        Width="280"
                      ></GridViewColumn>
-
                 </GridView>
             </ListView.View>
         </ListView>
