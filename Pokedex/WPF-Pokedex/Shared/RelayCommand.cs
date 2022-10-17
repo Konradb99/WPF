@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace WPF_Pokedex
+namespace WPF_Pokedex.Shared
 {
     public class RelayCommand : ICommand
     {
@@ -64,15 +66,15 @@ namespace WPF_Pokedex
             _TargetExecuteMethod = executeMethod;
         }
 
-        public RelayCommand(Action<T> executeMethod, Func<T,bool> canExecuteMethod)
+        public RelayCommand(Action<T> executeMethod, Func<T, bool> canExecuteMethod)
         {
             _TargetExecuteMethod = executeMethod;
             _TargetCanExecuteMethod = canExecuteMethod;
         }
 
-        public void RaiseCanExecuteChanged() 
+        public void RaiseCanExecuteChanged()
         {
-             CanExecuteChanged(this, EventArgs.Empty); 
+            CanExecuteChanged(this, EventArgs.Empty);
         }
         #region ICommand Members
 
