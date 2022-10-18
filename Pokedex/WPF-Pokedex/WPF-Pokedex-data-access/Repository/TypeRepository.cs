@@ -1,9 +1,11 @@
 ﻿using Newtonsoft.Json;
+using System.Collections.ObjectModel;
+using WPF_Pokedex.Shared;
 using WPF_Pokedex_data_access.Models;
 
 namespace WPF_Pokedex_data_access.Repository
 {
-    public class TypeRepository : ITypeRepository
+    public class TypeRepository : BindableBase
     {
         string baseUri = "https://pokeapi.co/api/v2/type";
         HttpClient client = new HttpClient();

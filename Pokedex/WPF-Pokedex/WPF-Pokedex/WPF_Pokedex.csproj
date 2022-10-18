@@ -6,14 +6,19 @@
     <RootNamespace>WPF_Pokedex</RootNamespace>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Unity" Version="5.11.10" />
+    <Content Include="icon.ico" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Pokedex\WPF-Pokedex-data-access\WPF-Pokedex-data-access.csproj" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WPF-Pokedex-data-access\WPF-Pokedex-data-access.csproj" />
   </ItemGroup>
 
 </Project>

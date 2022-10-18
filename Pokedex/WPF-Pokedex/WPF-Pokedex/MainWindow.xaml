@@ -5,15 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_Pokedex"
         xmlns:shared="clr-namespace:WPF_Pokedex.Shared"
-        xmlns:types ="clr-namespace:WPF_Pokedex.Views.TypesList"
+        xmlns:types = "clr-namespace:WPF_Pokedex.Views.TypesList"
+        xmlns:pokemons ="clr-namespace:WPF_Pokedex.Views.PokemonList"
         mc:Ignorable="d"
-        Title="MainWindow" Height="720" Width="1280">
-    <Window.DataContext>
-        <shared:MainViewModel />
-    </Window.DataContext>
+        Title="Pokedex" Height="720" Width="1280">
     <Window.Resources>
         <DataTemplate DataType="{x:Type types:TypesListViewModel}">
             <types:TypesListView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type pokemons:PokemonListViewModel}">
+            <pokemons:PokemonListView />
         </DataTemplate>
     </Window.Resources>
     <Grid>
@@ -22,7 +23,7 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="270" />
         </Grid.ColumnDefinitions>
-
-        <ContentControl Content="{Binding TypesCurrentViewModel}" Grid.Column="0"/>
+        <ContentControl Content="{Binding TypesCurrentViewModel}" Grid.Column="0" />
+        <ContentControl Content="{Binding PokemonCurrentViewModel}" Grid.Column="1" />
     </Grid>
 </Window>
