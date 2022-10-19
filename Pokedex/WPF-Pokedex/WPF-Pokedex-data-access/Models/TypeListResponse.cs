@@ -19,4 +19,10 @@ namespace WPF_Pokedex_data_access.Models
         {
         }
     }
+
+    public class TypeListEntity
+    {
+        public string name { get; set; }
+        public string url { get; set; }
+    }
 }

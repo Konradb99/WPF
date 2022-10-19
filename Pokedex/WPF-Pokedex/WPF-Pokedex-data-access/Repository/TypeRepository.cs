@@ -22,5 +22,16 @@ namespace WPF_Pokedex_data_access.Repository
             }
             return responseResult.results;
         }
+
+        public async Task<List<PokemonResponse>> getTypePokemons(string typeUrl)
+        {
+            //Get pokemons list
+            HttpResponseMessage response = await client.GetAsync(typeUrl);
+            response.EnsureSuccessStatusCode();
+            string responseBody = await response.Content.ReadAsStringAsync();
+            TypeResponse responseResult = JsonConvert.DeserializeObject<TypeResponse>(responseBody);
+
+            return responseResult.pokemon;
+        }
     }
 }

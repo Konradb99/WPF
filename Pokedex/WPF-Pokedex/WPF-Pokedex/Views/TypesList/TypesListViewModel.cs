@@ -28,7 +28,7 @@ namespace WPF_Pokedex.Views.TypesList
             set
             {
                 _selectedType = value;
-                _pokemonListViewModel.Select = value;
+                _pokemonListViewModel.LoadPokemons(_selectedType.url);
             }
         }
         

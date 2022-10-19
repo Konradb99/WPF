@@ -14,4 +14,22 @@ namespace WPF_Pokedex_data_access.Models
         {
         }
     }
+
+    public class PokemonResponse
+    {
+        public PokemonListEntity pokemon;
+        public int slot;
+
+        [JsonConstructor]
+        public PokemonResponse()
+        {
+
+        }
+    }
+
+    public class PokemonListEntity
+    {
+        public string name { get; set; }
+        public string url { get; set; }
+    }
 }

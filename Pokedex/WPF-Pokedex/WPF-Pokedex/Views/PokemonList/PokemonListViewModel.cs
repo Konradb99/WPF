@@ -12,25 +12,39 @@ namespace WPF_Pokedex.Views.PokemonList
 {
     public class PokemonListViewModel : BindableBase
     {
-        public TypeRepository _repository;
-        public PokemonListViewModel(TypeRepository repository)
+        public TypeRepository _typeRepository;
+        private PokemonRepository _pokemonRepository;
+
+        public PokemonListViewModel(TypeRepository typeRepository, PokemonRepository pokemonRepository)
         {
-            _repository = repository;
-            Select = new TypeListEntity { name = "Normal" };
+            _typeRepository = typeRepository;
+            _pokemonRepository = pokemonRepository;
         }
 
-        private TypeListEntity select;
+        private ObservableCollection<Pokemon> pokemons = new ObservableCollection<Pokemon>();
 
-        public TypeListEntity Select
+        public ObservableCollection<Pokemon> Pokemons
         {
             get
             {
-                return select;
+                return pokemons;
             }
             set
             {
-                select = value;
-                OnPropertyChanged(nameof(Select));
+                pokemons = value;
+                OnPropertyChanged(nameof(Pokemons));
+            }
+        }
+
+        public async void LoadPokemons(string url)
+        {
+            var pokemonResponse = await _typeRepository.getTypePokemons(url);
+            Pokemons = new ObservableCollection<Pokemon>();
+
+            foreach (var item in pokemonResponse)
+            {
+                Pokemon pokemon = await _pokemonRepository.getPokemon(item.pokemon.url);
+                Pokemons.Add(pokemon);
             }
         }
     }

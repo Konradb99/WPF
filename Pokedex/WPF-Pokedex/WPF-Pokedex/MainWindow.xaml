@@ -17,11 +17,11 @@
             <pokemons:PokemonListView />
         </DataTemplate>
     </Window.Resources>
-    <Grid>
+    <Grid Background="#343a40">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="270" />
             <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="270" />
+            <ColumnDefinition Width="250" />
         </Grid.ColumnDefinitions>
         <ContentControl Content="{Binding TypesCurrentViewModel}" Grid.Column="0" />
         <ContentControl Content="{Binding PokemonCurrentViewModel}" Grid.Column="1" />

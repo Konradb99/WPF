@@ -5,10 +5,25 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+    <Grid
+        Background="#343a40" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70px" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBlock 
+            Grid.Row="0" 
+            Background="#343a40" 
+            Text="Pokemon Type" 
+            FontSize="32px" 
+            FontWeight="Bold" 
+            Foreground="#E7E7E7" 
+            HorizontalAlignment="Center"
+            Margin="-20px 10px 0px 2px"/>
         <ListView 
             ItemsSource = "{Binding Types}"  
-            SelectedItem = "{Binding SelectedType}">
+            SelectedItem = "{Binding SelectedType}"
+            Grid.Row="1">
             <ListView.Style>
                 <Style TargetType="ListView">
                     <Setter Property="Background" Value="#6c757d"/>
@@ -81,15 +96,7 @@
                 <GridView AllowsColumnReorder="true">
                     <GridView.ColumnHeaderContainerStyle>
                         <Style TargetType="GridViewColumnHeader">
-                            <Setter Property="Background" Value="#343a40"/>
-                            <Setter Property="Margin" Value="-2, -5, -5, -5"/>
-                            <Setter Property="Padding" Value="10px, 0px, 0px, 10px"/>
-                            <Setter Property="Height" Value="80px"/>
-                            <Setter Property="FontSize" Value="32px"/>
-                            <Setter Property="FontWeight" Value="Bold"/>
-                            <Setter Property="Foreground" Value="#E7E7E7"/>
-                            <Setter Property="HorizontalContentAlignment" Value="Left"/>
-
+                            <Setter Property="Visibility" Value="Collapsed" />
                         </Style>
                     </GridView.ColumnHeaderContainerStyle>
                     <GridViewColumn

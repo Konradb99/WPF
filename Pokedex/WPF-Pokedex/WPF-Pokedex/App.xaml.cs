@@ -31,6 +31,7 @@ namespace WPF_Pokedex
         {
             services.AddSingleton<MainWindow>();
             services.AddScoped<TypeRepository>();
+            services.AddScoped<PokemonRepository>();
             services.AddScoped<MainViewModel>();
             services.AddScoped<TypesListViewModel>();
             services.AddScoped<PokemonListViewModel>();

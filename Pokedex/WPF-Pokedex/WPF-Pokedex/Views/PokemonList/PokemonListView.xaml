@@ -6,7 +6,50 @@
              xmlns:local="clr-namespace:WPF_Pokedex.Views.PokemonList"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <TextBlock Text="{Binding Select.name}" Background="Green"/>
+    <Grid Background="#343a40">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70px" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBlock 
+            Grid.Row="0" 
+            Background="#343a40" 
+            Text="Pokemons" 
+            FontSize="32px" 
+            FontWeight="Bold" 
+            Foreground="#E7E7E7" 
+            HorizontalAlignment="Center"
+            Margin="0px 10px 0px 2px"/>
+        <ListView ItemsSource="{Binding Pokemons}" BorderThickness="0" Grid.Row="1" Background="#6c757d">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Height" Value="200" />
+                    <Setter Property="Width" Value="200" />
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.Style>
+                <Style TargetType="ListView">
+                    <Setter Property="Background" Value="#6c757d"/>
+                    <Setter Property="BorderThickness" Value="0"/>
+                </Style>
+            </ListView.Style>
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="3" />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical" >
+                        <TextBlock Text="{Binding Path=name}" 
+                                   HorizontalAlignment="Center" 
+                                   FontSize="24px" 
+                                   Foreground="#E7E7E7" 
+                                   FontWeight="Bold"/>
+                        <Image Source="{Binding Path=sprites.front_default}" Height="150px" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </UserControl>
