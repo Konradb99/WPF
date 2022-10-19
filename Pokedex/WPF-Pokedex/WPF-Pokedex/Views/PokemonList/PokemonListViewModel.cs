@@ -5,6 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WPF_Pokedex.Shared;
+using WPF_Pokedex.Views.MainPanel;
+using WPF_Pokedex.Views.PokemonDetails;
+using WPF_Pokedex.Views.TypesList;
 using WPF_Pokedex_data_access.Models;
 using WPF_Pokedex_data_access.Repository;
 
@@ -19,6 +22,19 @@ namespace WPF_Pokedex.Views.PokemonList
         {
             _typeRepository = typeRepository;
             _pokemonRepository = pokemonRepository;
+        }
+
+        private TypeListEntity _selectedPokemon;
+        public TypeListEntity SelectedPokemon
+        {
+            get
+            {
+                return _selectedPokemon;
+            }
+            set
+            {
+                _selectedPokemon = value;
+            }
         }
 
         private ObservableCollection<Pokemon> pokemons = new ObservableCollection<Pokemon>();

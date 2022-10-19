@@ -19,7 +19,6 @@ namespace WPF_Pokedex_data_access.Repository
             response.EnsureSuccessStatusCode();
             string responseBody = await response.Content.ReadAsStringAsync();
             Pokemon responseResult = JsonConvert.DeserializeObject<Pokemon>(responseBody);
-
             responseResult.name = responseResult.name.ToUpper();
 
             return responseResult;

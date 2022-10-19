@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WPF_Pokedex.Views.MainPanel;
 using WPF_Pokedex.Views.PokemonList;
 using WPF_Pokedex.Views.TypesList;
 using WPF_Pokedex_data_access.Repository;
@@ -23,21 +24,21 @@ namespace WPF_Pokedex.Shared
             }
         }
 
-        private BindableBase _PokemonCurrentViewModel;
+        private BindableBase _MainPanelCurrentViewModel;
 
-        public BindableBase PokemonCurrentViewModel
+        public BindableBase MainPanelCurrentViewModel
         {
-            get { return _PokemonCurrentViewModel; }
+            get { return _MainPanelCurrentViewModel; }
             set
             {
-                SetProperty(ref _PokemonCurrentViewModel, value);
+                SetProperty(ref _MainPanelCurrentViewModel, value);
             }
         }
 
-        public MainViewModel(TypesListViewModel typesListViewModel, PokemonListViewModel pokemonListViewModel)
+        public MainViewModel(TypesListViewModel typesListViewModel, MainPanelViewModel mainPanelViewModel)
         {
             TypesCurrentViewModel = typesListViewModel;
-            PokemonCurrentViewModel = pokemonListViewModel;
+            MainPanelCurrentViewModel = mainPanelViewModel;
         }
     }
 }
