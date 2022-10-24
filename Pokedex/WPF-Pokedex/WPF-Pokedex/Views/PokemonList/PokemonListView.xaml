@@ -42,7 +42,12 @@
             Foreground="#E7E7E7" 
             HorizontalAlignment="Center"
             Margin="0px 10px 0px 2px"/>
-        <ListView ItemsSource="{Binding Pokemons}" BorderThickness="0" Grid.Row="1" Background="#6c757d">
+        <ListView 
+            ItemsSource="{Binding Pokemons}" 
+            SelectedItem="{Binding SelectedPokemon}"
+            BorderThickness="0"
+            Grid.Row="1" 
+            Background="#6c757d">
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
                     <Setter Property="Height" Value="200" />

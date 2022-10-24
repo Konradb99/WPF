@@ -9,6 +9,8 @@ namespace WPF_Pokedex_data_access.Models
         public int? weight { get; set; }
         public Sprites? sprites { get; set; }
 
+        public List<Stat>? stats { get; set; }
+
         [JsonConstructor]
         public Pokemon()
         {
@@ -27,5 +29,19 @@ namespace WPF_Pokedex_data_access.Models
         public string? front_shiny { get; set; }
         public string? front_shiny_female { get; set; }
 
+    }
+
+    public class Stat
+    {
+        public int base_stat { get; set; }
+        public int effort { get; set; }
+
+        public Statistic stat { get; set; }
+    }
+
+    public class Statistic
+    {
+        public string name { get; set; }
+        public string url { get; set; }
     }
 }

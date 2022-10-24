@@ -4,17 +4,20 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_Pokedex"
-        xmlns:shared="clr-namespace:WPF_Pokedex.Shared"
         xmlns:types = "clr-namespace:WPF_Pokedex.Views.TypesList"
-        xmlns:main = "clr-namespace:WPF_Pokedex.Views.MainPanel"
+        xmlns:pokemonList = "clr-namespace:WPF_Pokedex.Views.PokemonList"
+        xmlns:pokemonDetails ="clr-namespace:WPF_Pokedex.Views.PokemonDetails"
         mc:Ignorable="d"
         Title="Pokedex" Height="720" Width="1280">
     <Window.Resources>
         <DataTemplate DataType="{x:Type types:TypesListViewModel}">
             <types:TypesListView />
         </DataTemplate>
-        <DataTemplate DataType="{x:Type main:MainPanelViewModel}">
-            <main:MainPanelView />
+        <DataTemplate DataType="{x:Type pokemonList:PokemonListViewModel}">
+            <pokemonList:PokemonListView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type pokemonDetails:PokemonDetailsViewModel}">
+            <pokemonDetails:PokemonDetailsView />
         </DataTemplate>
     </Window.Resources>
     <Grid Background="#343a40">
@@ -24,6 +27,6 @@
             <ColumnDefinition Width="250" />
         </Grid.ColumnDefinitions>
         <ContentControl Content="{Binding TypesCurrentViewModel}" Grid.Column="0" />
-        <ContentControl Content="{Binding MainPanelCurrentViewModel}" Grid.Column="1" />
+        <ContentControl Content="{Binding navigation.MainPanelCurrentViewModel}" Grid.Column="1" />
     </Grid>
 </Window>

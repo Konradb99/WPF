@@ -1,0 +1,97 @@
+﻿<UserControl x:Class="WPF_Pokedex.Views.PokemonDetails.PokemonDetailsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPF_Pokedex.Views.PokemonDetails"
+             xmlns:interactivity="http://schemas.microsoft.com/xaml/behaviors"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="ProgressBar" x:Key="StatValue">
+            <Setter Property="Width" Value="200" />
+            <Setter Property="Height" Value="10" />
+            <Setter Property="Margin" Value="20px 0 0 0" />
+            <Setter Property="Foreground" Value="Blue" />
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70px" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBlock 
+            Grid.Row="0" 
+            Background="#343a40" 
+            Text="{Binding SelectedPokemon.name}" 
+            FontSize="32px" 
+            FontWeight="Bold" 
+            Foreground="#E7E7E7" 
+            HorizontalAlignment="Center"
+            Margin="0px 10px 0px 2px"/>
+        <Grid Background="#6c757d" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="225px" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Image Source="{Binding SelectedPokemon.sprites.front_default}" Height="225px" Grid.Column="0" VerticalAlignment="Top" Margin="0 100px 0 0"/>
+            <Grid Grid.Column="1" Margin="0 0 0 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="140px" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="80px" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Orientation="Vertical" Grid.Column="0" Margin="0 50px 0 0">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Weight: " FontSize="28px" FontWeight="Bold"/>
+                            <TextBlock Grid.Row="0" Text="{Binding SelectedPokemon.weight}" FontSize="28px"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Height: " FontSize="28px" FontWeight="Bold"/>
+                            <TextBlock Grid.Row="0" Text="{Binding SelectedPokemon.height}" FontSize="28px"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Column="1" Margin="0 0 0 0" Height="25px" VerticalAlignment="Top">
+                        <Image Source="https://cdn-icons-png.flaticon.com/512/93/93634.png" Height="16px"/>
+                        <TextBlock Text="Back" Margin="10px 0 0 0" FontSize="16px"/>
+                        <interactivity:Interaction.Triggers>
+                            <interactivity:EventTrigger EventName="MouseLeftButtonUp">
+                                <interactivity:InvokeCommandAction Command="{Binding BackButtonCommand}" />
+                            </interactivity:EventTrigger>
+                        </interactivity:Interaction.Triggers>
+                    </StackPanel>
+                </Grid>
+                <StackPanel Orientation="Vertical" Grid.Row="1">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="HP" Width="100px" FontSize="18px" FontWeight="DemiBold" Margin="0 0 0 5px"/>
+                        <ProgressBar Minimum="0" Maximum="100" Value="{Binding SelectedPokemon.stats[0].base_stat}" Style="{StaticResource StatValue}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Attack" Width="100px" FontSize="18px" FontWeight="DemiBold" Margin="0 0 0 5px"/>
+                        <ProgressBar Minimum="0" Maximum="100" Value="{Binding SelectedPokemon.stats[1].base_stat}" Style="{StaticResource StatValue}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Defense" Width="100px" FontSize="18px" FontWeight="DemiBold" Margin="0 0 0 5px"/>
+                        <ProgressBar Minimum="0" Maximum="100" Value="{Binding SelectedPokemon.stats[2].base_stat}" Style="{StaticResource StatValue}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Special Attack" Width="100px" FontSize="18px" FontWeight="DemiBold" Margin="0 0 0 5px"/>
+                        <ProgressBar Minimum="0" Maximum="100" Value="{Binding SelectedPokemon.stats[3].base_stat}" Style="{StaticResource StatValue}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Special Defense" Width="100px" FontSize="18px" FontWeight="DemiBold" Margin="0 0 0 5px"/>
+                        <ProgressBar Minimum="0" Maximum="100" Value="{Binding SelectedPokemon.stats[4].base_stat}" Style="{StaticResource StatValue}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Speed" Width="100px" FontSize="18px" FontWeight="DemiBold" Margin="0 0 0 5px"/>
+                        <ProgressBar Minimum="0" Maximum="100" Value="{Binding SelectedPokemon.stats[5].base_stat}" Style="{StaticResource StatValue}"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

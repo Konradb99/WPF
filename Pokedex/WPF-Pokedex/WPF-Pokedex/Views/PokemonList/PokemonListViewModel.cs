@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WPF_Pokedex.Shared;
-using WPF_Pokedex.Views.MainPanel;
 using WPF_Pokedex.Views.PokemonDetails;
 using WPF_Pokedex.Views.TypesList;
 using WPF_Pokedex_data_access.Models;
@@ -17,15 +16,19 @@ namespace WPF_Pokedex.Views.PokemonList
     {
         public TypeRepository _typeRepository;
         private PokemonRepository _pokemonRepository;
+        private readonly Navigation _navigation;
+        private readonly PokemonDetailsViewModel _pokemonDetailsViewModel;
 
-        public PokemonListViewModel(TypeRepository typeRepository, PokemonRepository pokemonRepository)
+        public PokemonListViewModel(TypeRepository typeRepository, PokemonRepository pokemonRepository, Navigation navigation, PokemonDetailsViewModel pokemonDetailsViewModel)
         {
             _typeRepository = typeRepository;
             _pokemonRepository = pokemonRepository;
+            _navigation = navigation;
+            _pokemonDetailsViewModel = pokemonDetailsViewModel;
         }
 
-        private TypeListEntity _selectedPokemon;
-        public TypeListEntity SelectedPokemon
+        private Pokemon _selectedPokemon;
+        public Pokemon SelectedPokemon
         {
             get
             {
@@ -34,6 +37,9 @@ namespace WPF_Pokedex.Views.PokemonList
             set
             {
                 _selectedPokemon = value;
+                _pokemonDetailsViewModel.SelectedPokemon = value;
+                _navigation.MainPanelCurrentViewModel = _navigation.PreviousViewModel;
+                _navigation.PreviousViewModel = this;
             }
         }
 
@@ -52,7 +58,7 @@ namespace WPF_Pokedex.Views.PokemonList
             }
         }
 
-        public async void LoadPokemons(string url)
+        public async void LoadPokemons(string url, PokemonDetailsViewModel previous)
         {
             var pokemonResponse = await _typeRepository.getTypePokemons(url);
             Pokemons = new ObservableCollection<Pokemon>();
@@ -62,6 +68,8 @@ namespace WPF_Pokedex.Views.PokemonList
                 Pokemon pokemon = await _pokemonRepository.getPokemon(item.pokemon.url);
                 Pokemons.Add(pokemon);
             }
+            _navigation.MainPanelCurrentViewModel = this;
+            _navigation.PreviousViewModel = previous;
         }
     }
 }
