@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_MoviesDB", "WPF_MoviesDB.csproj", "{0F82C7DD-2E4C-4282-A9C8-8FCCE2ADC88B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_MoviesDB", "WPF_MoviesDB.csproj", "{0F4CB554-A37E-4846-ACCD-55266E3D3EE3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0F82C7DD-2E4C-4282-A9C8-8FCCE2ADC88B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0F82C7DD-2E4C-4282-A9C8-8FCCE2ADC88B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0F82C7DD-2E4C-4282-A9C8-8FCCE2ADC88B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0F82C7DD-2E4C-4282-A9C8-8FCCE2ADC88B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F4CB554-A37E-4846-ACCD-55266E3D3EE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F4CB554-A37E-4846-ACCD-55266E3D3EE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F4CB554-A37E-4846-ACCD-55266E3D3EE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F4CB554-A37E-4846-ACCD-55266E3D3EE3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {A8507E8A-12D4-43B2-8FCF-73165D0FEC52}
+		SolutionGuid = {8E6DD501-7CB8-4ADB-B6D5-28A14E17BA00}
 	EndGlobalSection
 EndGlobal

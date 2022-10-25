@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Prism.DryIoc;
+using Prism.Ioc;
+using System;
 using System.Windows;
 
 namespace WPF_MoviesDB
@@ -11,7 +8,15 @@ namespace WPF_MoviesDB
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
-    public partial class App : Application
+    public partial class App : PrismApplication
     {
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
+        {
+        }
+
+        protected override Window CreateShell()
+        {
+            return Container.Resolve<ShellWindow>();
+        }
     }
 }
