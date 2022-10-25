@@ -19,6 +19,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="70px" />
             <RowDefinition />
+            <RowDefinition Height="200px" />
         </Grid.RowDefinitions>
         <TextBlock 
             Grid.Row="0" 
@@ -31,10 +32,10 @@
             Margin="0px 10px 0px 2px"/>
         <Grid Background="#6c757d" Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="225px" />
+                <ColumnDefinition Width="300px" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Image Source="{Binding SelectedPokemon.sprites.front_default}" Height="225px" Grid.Column="0" VerticalAlignment="Top" Margin="0 100px 0 0"/>
+            <Image Source="{Binding SelectedPokemon.sprites.front_default}" Height="300" Grid.Column="0" VerticalAlignment="Top" Margin="0 50px 0 0"/>
             <Grid Grid.Column="1" Margin="0 0 0 0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="140px" />
@@ -93,5 +94,17 @@
                 </StackPanel>
             </Grid>
         </Grid>
+        <ListView Grid.Row="2" ItemsSource="{Binding SelectedPokemon.moves}" Background="#6c757d" BorderThickness="0">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="3" />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Path=move.name}" TextAlignment="Center" FontSize="20px" Width="300px" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </UserControl>

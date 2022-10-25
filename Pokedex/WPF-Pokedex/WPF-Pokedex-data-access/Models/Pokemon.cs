@@ -11,6 +11,8 @@ namespace WPF_Pokedex_data_access.Models
 
         public List<Stat>? stats { get; set; }
 
+        public List<Moves>? moves { get; set; }
+
         [JsonConstructor]
         public Pokemon()
         {
@@ -43,5 +45,10 @@ namespace WPF_Pokedex_data_access.Models
     {
         public string name { get; set; }
         public string url { get; set; }
+    }
+
+    public class Moves
+    {
+        public Move move { get; set; }
     }
 }

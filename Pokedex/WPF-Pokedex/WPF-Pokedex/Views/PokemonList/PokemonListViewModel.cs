@@ -37,7 +37,7 @@ namespace WPF_Pokedex.Views.PokemonList
             set
             {
                 _selectedPokemon = value;
-                _pokemonDetailsViewModel.SelectedPokemon = value;
+                _pokemonDetailsViewModel.SelectedPokemon = value;          
                 _navigation.MainPanelCurrentViewModel = _navigation.PreviousViewModel;
                 _navigation.PreviousViewModel = this;
             }
@@ -68,8 +68,6 @@ namespace WPF_Pokedex.Views.PokemonList
                 Pokemon pokemon = await _pokemonRepository.getPokemon(item.pokemon.url);
                 Pokemons.Add(pokemon);
             }
-            _navigation.MainPanelCurrentViewModel = this;
-            _navigation.PreviousViewModel = previous;
         }
     }
 }

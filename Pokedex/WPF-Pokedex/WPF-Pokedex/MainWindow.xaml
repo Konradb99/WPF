@@ -24,7 +24,6 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="270" />
             <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="250" />
         </Grid.ColumnDefinitions>
         <ContentControl Content="{Binding TypesCurrentViewModel}" Grid.Column="0" />
         <ContentControl Content="{Binding navigation.MainPanelCurrentViewModel}" Grid.Column="1" />
