@@ -7,6 +7,7 @@
     <PackageReference Include="Prism.Wpf" Version="8.1.97" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DatabaseMoviesModule\Movies.csproj" />
     <ProjectReference Include="..\WPF_MoviesDB.Core\WPF_MoviesDB.Core.csproj" />
     <ProjectReference Include="..\WPF_MoviesDB.Infrastructure\WPF_MoviesDB.Infrastructure.csproj" />
   </ItemGroup>

@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 
-namespace DatabaseMovies.Adapters
+namespace Movies.Adapters
 {
     public class TabControlAdapter : RegionAdapterBase<TabControl>
     {

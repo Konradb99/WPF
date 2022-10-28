@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DatabaseMovies.Views
+namespace Movies.Views
 {
     /// <summary>
     /// Interaction logic for FavListView.xaml
     /// </summary>
-    public partial class FavListView : UserControl
+    public partial class FavouritesListView : UserControl
     {
-        public FavListView()
+        public FavouritesListView()
         {
             InitializeComponent();
         }

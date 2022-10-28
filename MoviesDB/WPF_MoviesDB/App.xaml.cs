@@ -1,4 +1,4 @@
-﻿using DatabaseMovies;
+﻿using Movies;
 using Genres;
 using Prism.DryIoc;
 using Prism.Ioc;
@@ -6,6 +6,7 @@ using Prism.Modularity;
 using System;
 using System.Windows;
 using WPF_MoviesDB.Infrastructure.Services;
+using Movies.ViewModels;
 
 namespace WPF_MoviesDB
 {
@@ -17,6 +18,8 @@ namespace WPF_MoviesDB
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.Register<IGenresService, GenresService>();
+            containerRegistry.Register<FavouritesListViewModel>();
+            containerRegistry.Register<MoviesListViewModel>();
         }
 
         protected override Window CreateShell()
@@ -26,7 +29,7 @@ namespace WPF_MoviesDB
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
         {
-            moduleCatalog.AddModule<DatabaseMoviesModule>();
+            moduleCatalog.AddModule<MoviesModule>();
             moduleCatalog.AddModule<GenresModule>();
         }
     }

@@ -13,6 +13,14 @@
             <ColumnDefinition Width="3*" />
         </Grid.ColumnDefinitions>
         <ContentControl prism:RegionManager.RegionName="GenresRegion" Grid.Column="0" />
-        <TabControl prism:RegionManager.RegionName="ContentRegion" Grid.Column="1" FontSize="25px" />
+        <TabControl prism:RegionManager.RegionName="ContentRegion" Grid.Column="1">
+            <TabControl.Resources>
+                <Style TargetType="{x:Type TabItem}">
+                    <Setter Property="Width" Value="150px" />
+                    <Setter Property="Height" Value="25px" />
+                    <Setter Property="FontSize" Value="20px" />
+                </Style>
+            </TabControl.Resources>
+        </TabControl>
     </Grid>
 </Window>

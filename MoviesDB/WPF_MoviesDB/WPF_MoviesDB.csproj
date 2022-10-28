@@ -16,8 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DatabaseMoviesModule\DatabaseMovies.csproj" />
-    <ProjectReference Include="..\FavouriteMovies\FavouriteMovies.csproj" />
+    <ProjectReference Include="..\DatabaseMoviesModule\Movies.csproj" />
     <ProjectReference Include="..\Genres\Genres.csproj" />
     <ProjectReference Include="..\WPF_MoviesDB.Core\WPF_MoviesDB.Core.csproj" />
     <ProjectReference Include="..\WPF_MoviesDB.Infrastructure\WPF_MoviesDB.Infrastructure.csproj" />

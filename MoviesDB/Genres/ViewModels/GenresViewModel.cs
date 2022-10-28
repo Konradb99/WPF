@@ -1,4 +1,6 @@
-﻿using Prism.Commands;
+﻿using Genres.Views;
+using Movies.ViewModels;
+using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Regions;
 using System.Collections.ObjectModel;
@@ -14,12 +16,8 @@ namespace Genres.ViewModels
     {
         private readonly IGenresService _genreService;
         private readonly IRegionManager _regionManager;
-        private string _message;
-        public string Message
-        {
-            get { return _message; }
-            set { SetProperty(ref _message, value); }
-        }
+        private readonly FavouritesListViewModel _favouritesListViewModel;
+        private readonly MoviesListViewModel _moviesListViewModel;
 
         private ObservableCollection<Genre> _genres = new ObservableCollection<Genre>();
 
@@ -42,16 +40,21 @@ namespace Genres.ViewModels
             get { return _selectedGenre; }
             set
             {
-                _regionManager.RequestNavigate("TabRegion", "FavouriteMoviesView");
+                _favouritesListViewModel.Genre = value.name;
                 SetProperty(ref _selectedGenre, value);
             }
         }
 
-        public GenresViewModel(IGenresService genreService, IRegionManager regionManager)
+        public GenresViewModel(
+            IGenresService genreService, 
+            IRegionManager regionManager, 
+            FavouritesListViewModel favouritesListViewModel, 
+            MoviesListViewModel moviesListViewModel)
         {
             _genreService = genreService;
             _regionManager = regionManager;
-            Message = ApiConstants.apiKey;
+            _favouritesListViewModel = favouritesListViewModel;
+            _moviesListViewModel = moviesListViewModel;
             getMovies();
             
         }
