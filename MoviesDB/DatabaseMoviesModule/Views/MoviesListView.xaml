@@ -17,7 +17,7 @@
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Width="300px">
+                    <StackPanel Width="320px">
                         <Image Source="{Binding Path=backdrop_path}" />
                         <TextBlock Text="{Binding Path=title}"/>
                     </StackPanel>

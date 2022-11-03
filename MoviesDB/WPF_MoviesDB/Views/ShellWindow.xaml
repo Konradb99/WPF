@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:prism="http://prismlibrary.com/"
         xmlns:local="clr-namespace:WPF_MoviesDB"
-        mc:Ignorable="d"
+        mc:Ignorable="d" MinHeight="720px" MinWidth="1280px"
         Title="ShellWindow" Height="720px" Width="1280px">
     <Grid>
         <Grid.ColumnDefinitions>
