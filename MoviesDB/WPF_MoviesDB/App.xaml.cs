@@ -18,6 +18,7 @@ namespace WPF_MoviesDB
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.Register<IGenresService, GenresService>();
+            containerRegistry.Register<IMoviesService, MoviesService>();
             containerRegistry.Register<FavouritesListViewModel>();
             containerRegistry.Register<MoviesListViewModel>();
         }

@@ -9,9 +9,20 @@
              mc:Ignorable="d" x:Name="DatabaseTab"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Vertical">
-            <TextBlock Text="{Binding Message}" HorizontalAlignment="Center" VerticalAlignment="Center"  FontSize="35"/>
-            <TextBlock Text="{Binding Genre}" HorizontalAlignment="Center" VerticalAlignment="Center"  FontSize="35"/>
-        </StackPanel>
+        <ListView ItemsSource="{Binding Movies}">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="3" />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Width="300px">
+                        <Image Source="{Binding Path=backdrop_path}" />
+                        <TextBlock Text="{Binding Path=title}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </UserControl>

@@ -1,4 +1,5 @@
-﻿using Prism.Commands;
+﻿using Newtonsoft.Json.Linq;
+using Prism.Commands;
 using Prism.Events;
 using Prism.Mvvm;
 using System;
@@ -6,50 +7,40 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WPF_MoviesDB.Core.Constants;
 using WPF_MoviesDB.Infrastructure.Events;
 using WPF_MoviesDB.Infrastructure.Models;
+using WPF_MoviesDB.Infrastructure.Services;
 
 namespace Movies.ViewModels
 {
-    public class MoviesListViewModel: BindableBase
+    public class MoviesListViewModel : BindableBase
     {
+        private readonly IMoviesService _moviesService;
 
-        private string _message;
-        public string Message
+        private IEnumerable<Movie> _movies;
+
+        public IEnumerable<Movie> Movies
         {
             get
             {
-                return _message;
+                return _movies;
             }
             set
             {
-                SetProperty(ref _message, value);
+                SetProperty(ref _movies, value);
             }
         }
 
-        private string _genre;
-        public string Genre
+        public MoviesListViewModel(IEventAggregator eventAggregator, IMoviesService moviesService)
         {
-            get
-            {
-                return _genre;
-            }
-            set
-            {
-                SetProperty(ref _genre, value);
-            }
-        }
-
-        public MoviesListViewModel(IEventAggregator eventAggregator)
-        {
-            Message = "Hello from Movies View Model";
-            Genre = "Your selected genre is: ";
             eventAggregator.GetEvent<SelectedChangeEvent>().Subscribe(OnSelectionChange);
+            _moviesService = moviesService;
         }
 
-        private void OnSelectionChange(Genre selectedGenre)
+        private async void OnSelectionChange(Genre selectedGenre)
         {
-            Genre = selectedGenre.name;
+            Movies = await _moviesService.GetMoviesPageByGenre(selectedGenre.id, DefaultValues.defaultPageNumber);
         }
     }
 }
