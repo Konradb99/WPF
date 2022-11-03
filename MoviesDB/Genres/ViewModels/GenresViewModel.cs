@@ -1,12 +1,14 @@
 ﻿using Genres.Views;
 using Movies.ViewModels;
 using Prism.Commands;
+using Prism.Events;
 using Prism.Mvvm;
 using Prism.Regions;
 using System.Collections.ObjectModel;
 using System.Configuration;
 using System.Net.Http;
 using WPF_MoviesDB.Core.Constants;
+using WPF_MoviesDB.Infrastructure.Events;
 using WPF_MoviesDB.Infrastructure.Models;
 using WPF_MoviesDB.Infrastructure.Services;
 
@@ -16,9 +18,7 @@ namespace Genres.ViewModels
     {
         private readonly IGenresService _genreService;
         private readonly IRegionManager _regionManager;
-        private readonly FavouritesListViewModel _favouritesListViewModel;
-        private readonly MoviesListViewModel _moviesListViewModel;
-
+        private readonly IEventAggregator _eventAggregator;
         private ObservableCollection<Genre> _genres = new ObservableCollection<Genre>();
 
         public ObservableCollection<Genre> Genres
@@ -40,21 +40,20 @@ namespace Genres.ViewModels
             get { return _selectedGenre; }
             set
             {
-                _favouritesListViewModel.Genre = value.name;
+                _eventAggregator.GetEvent<SelectedChangeEvent>().Publish(value);
                 SetProperty(ref _selectedGenre, value);
             }
         }
 
         public GenresViewModel(
             IGenresService genreService, 
-            IRegionManager regionManager, 
-            FavouritesListViewModel favouritesListViewModel, 
-            MoviesListViewModel moviesListViewModel)
+            IRegionManager regionManager,
+            IEventAggregator eventAggregator
+            )
         {
             _genreService = genreService;
             _regionManager = regionManager;
-            _favouritesListViewModel = favouritesListViewModel;
-            _moviesListViewModel = moviesListViewModel;
+            _eventAggregator = eventAggregator;
             getMovies();
             
         }

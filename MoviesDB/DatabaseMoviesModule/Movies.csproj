@@ -7,6 +7,9 @@
     <PackageReference Include="Prism.Wpf" Version="8.1.97" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WPF_MoviesDB.Infrastructure\WPF_MoviesDB.Infrastructure.csproj" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Update="Views\FavouritesListView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

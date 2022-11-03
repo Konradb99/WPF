@@ -1,9 +1,12 @@
-﻿using Prism.Mvvm;
+﻿using Prism.Events;
+using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WPF_MoviesDB.Infrastructure.Events;
+using WPF_MoviesDB.Infrastructure.Models;
 
 namespace Movies.ViewModels
 {
@@ -35,10 +38,16 @@ namespace Movies.ViewModels
             }
         }
 
-        public FavouritesListViewModel()
+        public FavouritesListViewModel(IEventAggregator eventAggregator)
         {
             Message = "Hello from Favourites View Model";
             Genre = "Your selected genre is: ";
+            eventAggregator.GetEvent<SelectedChangeEvent>().Subscribe(OnSelectionChange);
+        }
+
+        private void OnSelectionChange(Genre selectedGenre)
+        {
+            Genre = selectedGenre.name;
         }
     }
 }
