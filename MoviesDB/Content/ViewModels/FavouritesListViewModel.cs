@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using WPF_MoviesDB.Infrastructure.Events;
 using WPF_MoviesDB.Infrastructure.Models;
 
-namespace Movies.ViewModels
+namespace Content.ViewModels
 {
     public class FavouritesListViewModel : BindableBase
     {

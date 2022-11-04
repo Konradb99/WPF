@@ -1,13 +1,7 @@
-﻿using Genres.Views;
-using Movies.ViewModels;
-using Prism.Commands;
-using Prism.Events;
+﻿using Prism.Events;
 using Prism.Mvvm;
 using Prism.Regions;
 using System.Collections.ObjectModel;
-using System.Configuration;
-using System.Net.Http;
-using WPF_MoviesDB.Core.Constants;
 using WPF_MoviesDB.Infrastructure.Events;
 using WPF_MoviesDB.Infrastructure.Models;
 using WPF_MoviesDB.Infrastructure.Services;

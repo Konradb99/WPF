@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Movies.Views
 {
     /// <summary>
-    /// Interaction logic for MoviesListView.xaml
+    /// Interaction logic for FavouritesContentView.xaml
     /// </summary>
-    public partial class MoviesListView : UserControl
+    public partial class FavouritesContentView : UserControl
     {
-        public MoviesListView()
+        public FavouritesContentView()
         {
             InitializeComponent();
         }

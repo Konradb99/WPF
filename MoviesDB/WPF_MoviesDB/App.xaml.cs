@@ -3,10 +3,10 @@ using Genres;
 using Prism.DryIoc;
 using Prism.Ioc;
 using Prism.Modularity;
-using System;
 using System.Windows;
 using WPF_MoviesDB.Infrastructure.Services;
-using Movies.ViewModels;
+using Content.ViewModels;
+using Content;
 
 namespace WPF_MoviesDB
 {
@@ -32,6 +32,7 @@ namespace WPF_MoviesDB
         {
             moduleCatalog.AddModule<MoviesModule>();
             moduleCatalog.AddModule<GenresModule>();
+            moduleCatalog.AddModule<ContentModule>();
         }
     }
 }

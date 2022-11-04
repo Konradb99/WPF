@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF_MoviesDB.Core", "..\WPF
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Genres", "..\Genres\Genres.csproj", "{6F6F201F-D38E-4299-9842-D2E7C1E8738E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_MoviesDB.Infrastructure", "..\WPF_MoviesDB.Infrastructure\WPF_MoviesDB.Infrastructure.csproj", "{50FA78AE-8B53-438A-A8E1-1A6EC4E0B3FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF_MoviesDB.Infrastructure", "..\WPF_MoviesDB.Infrastructure\WPF_MoviesDB.Infrastructure.csproj", "{50FA78AE-8B53-438A-A8E1-1A6EC4E0B3FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Content", "..\Content\Content.csproj", "{367D3A67-DDAB-4CFB-A715-9B7F6835C146}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,10 @@ Global
 		{50FA78AE-8B53-438A-A8E1-1A6EC4E0B3FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50FA78AE-8B53-438A-A8E1-1A6EC4E0B3FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50FA78AE-8B53-438A-A8E1-1A6EC4E0B3FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{367D3A67-DDAB-4CFB-A715-9B7F6835C146}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{367D3A67-DDAB-4CFB-A715-9B7F6835C146}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{367D3A67-DDAB-4CFB-A715-9B7F6835C146}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{367D3A67-DDAB-4CFB-A715-9B7F6835C146}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +54,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{AA5E2E0A-2BC9-480F-8844-51AA98840EB2} = {56FF061F-31B7-4B4C-AD8A-18AE68207D09}
 		{6F6F201F-D38E-4299-9842-D2E7C1E8738E} = {56FF061F-31B7-4B4C-AD8A-18AE68207D09}
+		{367D3A67-DDAB-4CFB-A715-9B7F6835C146} = {56FF061F-31B7-4B4C-AD8A-18AE68207D09}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8E6DD501-7CB8-4ADB-B6D5-28A14E17BA00}

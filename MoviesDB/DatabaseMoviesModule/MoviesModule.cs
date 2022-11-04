@@ -16,8 +16,8 @@ namespace Movies
         public void OnInitialized(IContainerProvider containerProvider)
         {
             var regionManager = containerProvider.Resolve<IRegionManager>();
-            regionManager.RegisterViewWithRegion("ContentRegion", typeof(MoviesListView));
-            regionManager.RegisterViewWithRegion("ContentRegion", typeof(FavouritesListView));
+            regionManager.RegisterViewWithRegion("TabRegion", typeof(MoviesContentView));
+            regionManager.RegisterViewWithRegion("TabRegion", typeof(FavouritesContentView));
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)

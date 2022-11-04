@@ -10,17 +10,17 @@
     <ProjectReference Include="..\WPF_MoviesDB.Infrastructure\WPF_MoviesDB.Infrastructure.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Views\FavouritesListView.xaml.cs">
+    <Compile Update="Views\FavouritesList\FavouritesContentView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Views\FavouritesListView.xaml">
+    <Page Update="Views\FavouritesList\FavouritesContentView.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\NewFolder\" />
+    <Folder Include="ViewModels\" />
   </ItemGroup>
 </Project>
