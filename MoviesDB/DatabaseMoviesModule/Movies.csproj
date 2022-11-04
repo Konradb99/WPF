@@ -20,4 +20,7 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\NewFolder\" />
+  </ItemGroup>
 </Project>

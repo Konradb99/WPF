@@ -1,0 +1,51 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Brush x:Key="TextGrayColor">#3f3f3f</Brush>
+    <Brush x:Key="CardBackGroundColor">#d6d6d6</Brush>
+
+    <Style TargetType="ListView" x:Key="MoviesListView">
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>
+
+    <Style TargetType="ListViewItem">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Margin" Value="10px" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListViewItem}">
+                    <ContentPresenter />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="StackPanel" x:Key="MoviesListViewItem">
+        <Setter Property="Width" Value="300px" />
+        <Setter Property="Height" Value="280px" />
+    </Style>
+    
+    <Style TargetType="TextBlock" x:Key="MoviesListViewTitle">
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="24px" />
+        <Setter Property="FontWeight" Value="DemiBold" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="TextAlignment" Value="Center" />
+    </Style>
+
+    <Style TargetType="Border" x:Key="Card">
+        <Style.Triggers>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsMouseOver" Value="True"/>
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="{DynamicResource CardBackGroundColor}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource CardBackGroundColor}" />
+                <Setter Property="Effect">
+                    <Setter.Value>
+                        <DropShadowEffect Opacity="0.5" BlurRadius="15"/>
+                    </Setter.Value>
+                </Setter>
+            </MultiTrigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

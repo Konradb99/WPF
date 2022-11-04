@@ -1,8 +1,7 @@
-﻿    <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Brush x:Key="TextGrayColor">#3f3f3f</Brush>
-
-
+    
     <Style TargetType="ListView" x:Key="ListViewGenres">
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="Background" Value="LightBlue" />
