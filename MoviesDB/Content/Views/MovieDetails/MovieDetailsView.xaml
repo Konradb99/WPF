@@ -8,10 +8,45 @@
              prism:ViewModelLocator.AutoWireViewModel="True"
              mc:Ignorable="d" x:Name="Favourite"
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="MovieDetailsStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
     <Grid>
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Vertical">
-            <TextBlock Text="{Binding Message}" HorizontalAlignment="Center" VerticalAlignment="Center"  FontSize="35"/>
-            <TextBlock Text="{Binding Title}" HorizontalAlignment="Center" VerticalAlignment="Center"  FontSize="35"/>
-        </StackPanel>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400px" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Image Source="{Binding Movie.poster_path}" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Margin="15px 0 0 0" VerticalAlignment="Center"/>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200px" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="130px" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="{Binding Movie.title}" Grid.Column="0" Style="{StaticResource MovieDetailsTitle}" TextWrapping="Wrap" Width="500px" TextAlignment="Center"/>
+                <Button Grid.Column="1" 
+                    Style="{StaticResource MovieDetailsGoBackButton}"
+                    Command="{Binding GoBackCommand}">
+                    <Border Style="{StaticResource MovieDetailsButtonBorder}">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="https://cdn-icons-png.flaticon.com/512/93/93634.png" Height="20px" Margin="10px 0 0 0"/>
+                            <TextBlock Text="Back" FontSize="18px" VerticalAlignment="Center" Margin="10px 0 0 0" FontWeight="DemiBold"/>
+                        </StackPanel>
+                    </Border>
+                </Button>
+            </Grid>
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Vertical" Background="Blue" Grid.Row="1">
+                <TextBlock Text="{Binding Message}" HorizontalAlignment="Center" VerticalAlignment="Center"  FontSize="35"/>
+                <TextBlock Text="{Binding Title}" HorizontalAlignment="Center" VerticalAlignment="Center"  FontSize="35"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </UserControl>

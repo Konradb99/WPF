@@ -1,6 +1,8 @@
-﻿using Prism.Events;
+﻿using Prism.Commands;
+using Prism.Events;
 using Prism.Mvvm;
 using Prism.Regions;
+using System;
 using WPF_MoviesDB.Infrastructure.Events;
 using WPF_MoviesDB.Infrastructure.Models;
 
@@ -8,6 +10,9 @@ namespace Content.ViewModels
 {
     public class MovieDetailsViewModel : BindableBase, INavigationAware
     {
+        private readonly IRegionManager _regionManager;
+        public DelegateCommand GoBackCommand { get; private set; }
+
         private string _message;
         public string Message
         {
@@ -35,6 +40,7 @@ namespace Content.ViewModels
         }
 
         private string _title;
+
         public string Title
         {
             get
@@ -47,14 +53,22 @@ namespace Content.ViewModels
             }
         }
 
-        public MovieDetailsViewModel(IEventAggregator eventAggregator)
+        public MovieDetailsViewModel(IEventAggregator eventAggregator, IRegionManager regionManager)
         {
             Message = "Hello from MovieDetailsView";
             Title = "Movie title";
+            GoBackCommand = new DelegateCommand(Click, CanClick);
+            _regionManager = regionManager;
         }
 
-        private void OnSelectionChange(Movie selectedMovie)
+        private void Click()
         {
+            _regionManager.RequestNavigate("MoviesContentRegion", "MoviesListView");
+        }
+
+        private bool CanClick()
+        {
+            return true;
         }
 
         public void OnNavigatedTo(NavigationContext navigationContext)
@@ -68,12 +82,12 @@ namespace Content.ViewModels
 
         public bool IsNavigationTarget(NavigationContext navigationContext)
         {
-            throw new System.NotImplementedException();
+            return true;
         }
 
         public void OnNavigatedFrom(NavigationContext navigationContext)
         {
-            throw new System.NotImplementedException();
+            
         }
     }
 }

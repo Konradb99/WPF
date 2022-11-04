@@ -59,11 +59,17 @@ namespace Content.ViewModels
             _eventAggregator.GetEvent<SelectedChangeEvent>().Subscribe(OnSelectionChange);
             _moviesService = moviesService;
             _regionManager = regionManager;
+            GetDefaultMovies();
         }
 
         private async void OnSelectionChange(Genre selectedGenre)
         {
             Movies = await _moviesService.GetMoviesPageByGenre(selectedGenre.id, DefaultValues.defaultPageNumber);
+        }
+
+        private async void GetDefaultMovies()
+        {
+            Movies = await _moviesService.GetMoviesPage();
         }
     }
 }
