@@ -2,6 +2,7 @@
 using Prism.Events;
 using Prism.Mvvm;
 using Prism.Regions;
+using Prism.Services.Dialogs;
 using System;
 using WPF_MoviesDB.Infrastructure.Events;
 using WPF_MoviesDB.Infrastructure.Models;
@@ -11,7 +12,10 @@ namespace Content.ViewModels
     public class MovieDetailsViewModel : BindableBase, INavigationAware
     {
         private readonly IRegionManager _regionManager;
+        private readonly IDialogService _dialogService;
+
         public DelegateCommand GoBackCommand { get; private set; }
+        public DelegateCommand ShowSettingsCommand { get; private set; }
 
         private string _message;
         public string Message
@@ -53,12 +57,35 @@ namespace Content.ViewModels
             }
         }
 
-        public MovieDetailsViewModel(IEventAggregator eventAggregator, IRegionManager regionManager)
+        public MovieDetailsViewModel(
+            IEventAggregator eventAggregator, 
+            IRegionManager regionManager,
+            IDialogService dialogService)
         {
+            _regionManager = regionManager;
+            _dialogService = dialogService;
+
             Message = "Hello from MovieDetailsView";
             Title = "Movie title";
+
             GoBackCommand = new DelegateCommand(Click, CanClick);
-            _regionManager = regionManager;
+            ShowSettingsCommand = new DelegateCommand(OpenDialog, CanClick);
+        }
+
+        private void OpenDialog()
+        {
+            var message = $"Test message from {Title}";
+            _dialogService.ShowDialog("SettingsDialog", new DialogParameters($"message={message}"), r =>
+            {
+                if (r.Result == ButtonResult.None)
+                    Title = "Result is None";
+                else if (r.Result == ButtonResult.OK)
+                    Title = "Result is OK";
+                else if (r.Result == ButtonResult.Cancel)
+                    Title = "Result is Cancel";
+                else
+                    Title = "I Don't know what you did!?";
+            });
         }
 
         private void Click()

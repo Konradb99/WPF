@@ -7,6 +7,7 @@ using System.Windows;
 using WPF_MoviesDB.Infrastructure.Services;
 using Content.ViewModels;
 using Content;
+using Dialogs;
 
 namespace WPF_MoviesDB
 {
@@ -33,6 +34,7 @@ namespace WPF_MoviesDB
             moduleCatalog.AddModule<MoviesModule>();
             moduleCatalog.AddModule<GenresModule>();
             moduleCatalog.AddModule<ContentModule>();
+            moduleCatalog.AddModule<DialogsModule>();
         }
     }
 }

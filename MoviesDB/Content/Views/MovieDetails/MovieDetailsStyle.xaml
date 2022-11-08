@@ -11,13 +11,13 @@
         <Setter Property="VerticalAlignment" Value="Center" />
     </Style>
 
-    <Style TargetType="Button" x:Key="MovieDetailsGoBackButton">
+    <Style TargetType="Button" x:Key="MovieDetailsButton">
         <Setter Property="Height" Value="35px" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="VerticalAlignment" Value="Top" />
         <Setter Property="Margin" Value="0 10px 0 0" />
-        <Setter Property="Width" Value="100px" />
+        <Setter Property="Width" Value="130px" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -34,7 +34,7 @@
         <Setter Property="BorderBrush" Value="{DynamicResource CardBackGroundColor}" />
         <Setter Property="Background" Value="{DynamicResource CardBackGroundColor}" />
         <Setter Property="CornerRadius" Value="12" />
-        <Setter Property="Width" Value="100px" />
+        <Setter Property="Width" Value="125px" />
         <Style.Triggers>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
