@@ -36,12 +36,7 @@ namespace Dialogs.ViewModels
 
         protected virtual void CloseDialog(string parameter)
         {
-            ButtonResult result = ButtonResult.None;
-
-            if (parameter?.ToLower() == "true")
-                result = ButtonResult.OK;
-            else if (parameter?.ToLower() == "false")
-                result = ButtonResult.Cancel;
+            ButtonResult result = ButtonResult.OK;
 
             RaiseRequestClose(new DialogResult(result));
         }

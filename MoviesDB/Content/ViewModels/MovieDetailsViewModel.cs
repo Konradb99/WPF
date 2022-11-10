@@ -74,17 +74,8 @@ namespace Content.ViewModels
 
         private void OpenDialog()
         {
-            var message = $"Test message from {Title}";
-            _dialogService.ShowDialog("SettingsDialog", new DialogParameters($"message={message}"), r =>
+            _dialogService.ShowDialog("SettingsDialog", new DialogParameters($"message={Title}"), r =>
             {
-                if (r.Result == ButtonResult.None)
-                    Title = "Result is None";
-                else if (r.Result == ButtonResult.OK)
-                    Title = "Result is OK";
-                else if (r.Result == ButtonResult.Cancel)
-                    Title = "Result is Cancel";
-                else
-                    Title = "I Don't know what you did!?";
             });
         }
 

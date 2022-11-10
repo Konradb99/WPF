@@ -22,6 +22,7 @@
                     <Setter Property="Width" Value="150px" />
                     <Setter Property="Height" Value="25px" />
                     <Setter Property="FontSize" Value="20px" />
+                    <Setter Property="Header" Value="Test" />
                 </Style>
             </TabControl.Resources>
         </TabControl>
