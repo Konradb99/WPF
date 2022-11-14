@@ -1,10 +1,6 @@
 ﻿using Prism.Regions;
-using System;
-using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Controls;
 
 namespace Movies.Adapters
@@ -30,10 +26,8 @@ namespace Movies.Adapters
                         var tabTodelete = regionTarget.Items.OfType<TabItem>().FirstOrDefault(n => n.Content == item);
                         regionTarget.Items.Remove(tabTodelete);
                     }
-
             };
         }
-
 
         protected override IRegion CreateRegion()
         {

@@ -3,7 +3,6 @@ using Prism.Events;
 using Prism.Mvvm;
 using Prism.Regions;
 using Prism.Services.Dialogs;
-using System;
 using WPF_MoviesDB.Infrastructure.Events;
 using WPF_MoviesDB.Infrastructure.Models;
 
@@ -11,6 +10,7 @@ namespace Content.ViewModels
 {
     public class MovieDetailsViewModel : BindableBase, INavigationAware
     {
+        private readonly IEventAggregator _eventAggregator;
         private readonly IRegionManager _regionManager;
         private readonly IDialogService _dialogService;
 
@@ -18,6 +18,7 @@ namespace Content.ViewModels
         public DelegateCommand ShowSettingsCommand { get; private set; }
 
         private string _message;
+
         public string Message
         {
             get
@@ -31,6 +32,7 @@ namespace Content.ViewModels
         }
 
         private Movie _movie;
+
         public Movie Movie
         {
             get
@@ -58,10 +60,11 @@ namespace Content.ViewModels
         }
 
         public MovieDetailsViewModel(
-            IEventAggregator eventAggregator, 
+            IEventAggregator eventAggregator,
             IRegionManager regionManager,
             IDialogService dialogService)
         {
+            _eventAggregator = eventAggregator;
             _regionManager = regionManager;
             _dialogService = dialogService;
 
@@ -81,6 +84,7 @@ namespace Content.ViewModels
 
         private void Click()
         {
+            _eventAggregator.GetEvent<ResetSelectedMovieEvent>().Publish();
             _regionManager.RequestNavigate("MoviesContentRegion", "MoviesListView");
         }
 
@@ -105,7 +109,6 @@ namespace Content.ViewModels
 
         public void OnNavigatedFrom(NavigationContext navigationContext)
         {
-            
         }
     }
 }

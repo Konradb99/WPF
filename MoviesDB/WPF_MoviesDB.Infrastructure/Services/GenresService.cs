@@ -1,12 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Text.Json;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 using WPF_MoviesDB.Core.Constants;
 using WPF_MoviesDB.Infrastructure.Models;
 
@@ -28,7 +20,7 @@ namespace WPF_MoviesDB.Infrastructure.Services
             {
                 genres.Add(genre);
             }
-             
+
             return genres;
         }
     }

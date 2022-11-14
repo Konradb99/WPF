@@ -7,7 +7,8 @@ namespace Movies
 {
     public class MoviesModule : IModule
     {
-        IRegionManager _regionManager;
+        private IRegionManager _regionManager;
+
         public MoviesModule(IRegionManager regionManager)
         {
             _regionManager = regionManager;

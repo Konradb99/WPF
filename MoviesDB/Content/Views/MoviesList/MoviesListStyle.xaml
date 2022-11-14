@@ -4,7 +4,7 @@
     <Brush x:Key="CardBackGroundColor">#d6d6d6</Brush>
 
     <Style TargetType="ListView" x:Key="MoviesListView">
-        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="BorderThickness" Value="0" />
     </Style>
 
     <Style TargetType="ListViewItem">
@@ -23,7 +23,7 @@
         <Setter Property="Width" Value="300px" />
         <Setter Property="Height" Value="280px" />
     </Style>
-    
+
     <Style TargetType="TextBlock" x:Key="MoviesListViewTitle">
         <Setter Property="HorizontalAlignment" Value="Center" />
         <Setter Property="FontSize" Value="24px" />
@@ -36,13 +36,13 @@
         <Style.Triggers>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
-                    <Condition Property="IsMouseOver" Value="True"/>
+                    <Condition Property="IsMouseOver" Value="True" />
                 </MultiTrigger.Conditions>
                 <Setter Property="Background" Value="{DynamicResource CardBackGroundColor}" />
                 <Setter Property="BorderBrush" Value="{DynamicResource CardBackGroundColor}" />
                 <Setter Property="Effect">
                     <Setter.Value>
-                        <DropShadowEffect Opacity="0.5" BlurRadius="15"/>
+                        <DropShadowEffect Opacity="0.5" BlurRadius="15" />
                     </Setter.Value>
                 </Setter>
             </MultiTrigger>

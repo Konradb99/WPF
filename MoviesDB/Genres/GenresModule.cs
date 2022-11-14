@@ -2,13 +2,12 @@
 using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Regions;
-using WPF_MoviesDB.Infrastructure.Services;
 
 namespace Genres
 {
     public class GenresModule : IModule
     {
-        IRegionManager _regionManager;
+        private IRegionManager _regionManager;
 
         public GenresModule(IRegionManager regionManager)
         {
@@ -22,7 +21,6 @@ namespace Genres
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
-
         }
     }
 }

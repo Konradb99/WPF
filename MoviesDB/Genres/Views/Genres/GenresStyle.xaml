@@ -1,13 +1,13 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Brush x:Key="TextGrayColor">#3f3f3f</Brush>
-    
+
     <Style TargetType="ListView" x:Key="ListViewGenres">
-        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Background" Value="LightBlue" />
     </Style>
 
-    <Style TargetType="Border" x:Key="ListViewItem" >
+    <Style TargetType="Border" x:Key="ListViewItem">
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Background" Value="Blue" />
@@ -17,7 +17,7 @@
         <Setter Property="Height" Value="50px" />
     </Style>
 
-    <Style TargetType="TextBlock" x:Key="ListViewItemText" >
+    <Style TargetType="TextBlock" x:Key="ListViewItemText">
         <Setter Property="FontSize" Value="25px" />
         <Setter Property="FontWeight" Value="Bold" />
         <Setter Property="VerticalAlignment" Value="Center" />

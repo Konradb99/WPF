@@ -4,9 +4,9 @@
     <Brush x:Key="CardBackGroundColor">#d6d6d6</Brush>
 
     <Style TargetType="TextBlock" x:Key="MovieDetailsTitle">
-        <Setter Property="FontSize" Value="48px"/>
+        <Setter Property="FontSize" Value="48px" />
         <Setter Property="FontWeight" Value="DemiBold" />
-        <Setter Property="Width" Value="300px"/>
+        <Setter Property="Width" Value="300px" />
         <Setter Property="TextAlignment" Value="Center" />
         <Setter Property="VerticalAlignment" Value="Center" />
     </Style>
@@ -29,7 +29,7 @@
         </Setter>
     </Style>
 
-    <Style TargetType="Border" x:Key="MovieDetailsButtonBorder" >
+    <Style TargetType="Border" x:Key="MovieDetailsButtonBorder">
         <Setter Property="BorderThickness" Value="2px" />
         <Setter Property="BorderBrush" Value="{DynamicResource CardBackGroundColor}" />
         <Setter Property="Background" Value="{DynamicResource CardBackGroundColor}" />
@@ -38,13 +38,13 @@
         <Style.Triggers>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
-                    <Condition Property="IsMouseOver" Value="True"/>
+                    <Condition Property="IsMouseOver" Value="True" />
                 </MultiTrigger.Conditions>
                 <Setter Property="Background" Value="{DynamicResource CardBackGroundColor}" />
                 <Setter Property="BorderBrush" Value="{DynamicResource CardBackGroundColor}" />
                 <Setter Property="Effect">
                     <Setter.Value>
-                        <DropShadowEffect Opacity="0.5" BlurRadius="15"/>
+                        <DropShadowEffect Opacity="0.5" BlurRadius="15" />
                     </Setter.Value>
                 </Setter>
             </MultiTrigger>

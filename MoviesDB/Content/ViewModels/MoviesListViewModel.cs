@@ -1,14 +1,7 @@
-﻿using Newtonsoft.Json.Linq;
-using Prism.Commands;
-using Prism.Events;
+﻿using Prism.Events;
 using Prism.Mvvm;
 using Prism.Regions;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Security.RightsManagement;
-using System.Text;
-using System.Threading.Tasks;
 using WPF_MoviesDB.Core.Constants;
 using WPF_MoviesDB.Infrastructure.Events;
 using WPF_MoviesDB.Infrastructure.Models;
@@ -57,9 +50,15 @@ namespace Content.ViewModels
         {
             _eventAggregator = eventAggregator;
             _eventAggregator.GetEvent<SelectedChangeEvent>().Subscribe(OnSelectionChange);
+            _eventAggregator.GetEvent<ResetSelectedMovieEvent>().Subscribe(ResetSelectedMovie);
             _moviesService = moviesService;
             _regionManager = regionManager;
             GetDefaultMovies();
+        }
+
+        private void ResetSelectedMovie()
+        {
+            SelectedMovie = new Movie();
         }
 
         private async void OnSelectionChange(Genre selectedGenre)

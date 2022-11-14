@@ -2,7 +2,6 @@
 using Dialogs.Views;
 using Prism.Ioc;
 using Prism.Modularity;
-using Prism.Regions;
 
 namespace Dialogs
 {
@@ -10,7 +9,6 @@ namespace Dialogs
     {
         public void OnInitialized(IContainerProvider containerProvider)
         {
-
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)

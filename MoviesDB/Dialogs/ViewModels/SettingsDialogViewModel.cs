@@ -2,10 +2,6 @@
 using Prism.Mvvm;
 using Prism.Services.Dialogs;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Dialogs.ViewModels
 {
@@ -14,6 +10,7 @@ namespace Dialogs.ViewModels
         public DelegateCommand<string> CloseDialogCommand { get; private set; }
 
         private string _message;
+
         public string Message
         {
             get { return _message; }
@@ -21,6 +18,7 @@ namespace Dialogs.ViewModels
         }
 
         private string _title = "Notification";
+
         public string Title
         {
             get { return _title; }
@@ -53,7 +51,6 @@ namespace Dialogs.ViewModels
 
         public virtual void OnDialogClosed()
         {
-
         }
 
         public virtual void OnDialogOpened(IDialogParameters parameters)

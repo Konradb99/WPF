@@ -40,7 +40,7 @@ namespace Genres.ViewModels
         }
 
         public GenresViewModel(
-            IGenresService genreService, 
+            IGenresService genreService,
             IRegionManager regionManager,
             IEventAggregator eventAggregator
             )
@@ -49,7 +49,6 @@ namespace Genres.ViewModels
             _regionManager = regionManager;
             _eventAggregator = eventAggregator;
             getMovies();
-            
         }
 
         public async void getMovies()

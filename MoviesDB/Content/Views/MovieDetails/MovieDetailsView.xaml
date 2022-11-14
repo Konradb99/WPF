@@ -1,17 +1,16 @@
 ﻿<UserControl x:Class="Content.Views.MovieDetailsView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Content.Views"
              xmlns:prism="http://prismlibrary.com/"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              prism:ViewModelLocator.AutoWireViewModel="True"
              mc:Ignorable="d" x:Name="Favourite"
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="MovieDetailsStyle.xaml"/>
+                <ResourceDictionary Source="MovieDetailsStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
@@ -20,7 +19,7 @@
             <ColumnDefinition Width="400px" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <Image Source="{Binding Movie.poster_path}" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Margin="15px 0 0 0"/>
+        <Image Source="{Binding Movie.poster_path}" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Margin="15px 0 0 0" />
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="200px" />
@@ -31,15 +30,15 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="130px" />
                 </Grid.ColumnDefinitions>
-                <TextBlock Text="{Binding Movie.title}" Grid.Column="0" Style="{StaticResource MovieDetailsTitle}" TextWrapping="Wrap" Width="500px" TextAlignment="Center"/>
+                <TextBlock Text="{Binding Movie.title}" Grid.Column="0" Style="{StaticResource MovieDetailsTitle}" TextWrapping="Wrap" Width="500px" TextAlignment="Center" />
                 <StackPanel Orientation="Vertical" Grid.Column="1">
                     <Button
                         Style="{StaticResource MovieDetailsButton}"
                         Command="{Binding ShowSettingsCommand}">
-                        <Border Style="{StaticResource MovieDetailsButtonBorder}" >
+                        <Border Style="{StaticResource MovieDetailsButtonBorder}">
                             <StackPanel Orientation="Horizontal">
-                                <Image Source="https://cdn-icons-png.flaticon.com/512/73/73391.png" Height="20px" Margin="10px 0 0 0"/>
-                                <TextBlock Text="Options" FontSize="18px" VerticalAlignment="Center" Margin="10px 0 0 0" FontWeight="DemiBold"/>
+                                <Image Source="https://cdn-icons-png.flaticon.com/512/73/73391.png" Height="20px" Margin="10px 0 0 0" />
+                                <TextBlock Text="Options" FontSize="18px" VerticalAlignment="Center" Margin="10px 0 0 0" FontWeight="DemiBold" />
                             </StackPanel>
                         </Border>
                     </Button>
@@ -48,17 +47,13 @@
                         Command="{Binding GoBackCommand}">
                         <Border Style="{StaticResource MovieDetailsButtonBorder}">
                             <StackPanel Orientation="Horizontal">
-                                <Image Source="https://cdn-icons-png.flaticon.com/512/93/93634.png" Height="20px" Margin="10px 0 0 0"/>
-                                <TextBlock Text="Back" FontSize="18px" VerticalAlignment="Center" Margin="10px 0 0 0" FontWeight="DemiBold"/>
+                                <Image Source="https://cdn-icons-png.flaticon.com/512/93/93634.png" Height="20px" Margin="10px 0 0 0" />
+                                <TextBlock Text="Back" FontSize="18px" VerticalAlignment="Center" Margin="10px 0 0 0" FontWeight="DemiBold" />
                             </StackPanel>
                         </Border>
                     </Button>
                 </StackPanel>
             </Grid>
-            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Vertical" Background="Blue" Grid.Row="1">
-                <TextBlock Text="{Binding Message}" HorizontalAlignment="Center" VerticalAlignment="Center"  FontSize="35"/>
-                <TextBlock Text="{Binding Title}" HorizontalAlignment="Center" VerticalAlignment="Center"  FontSize="35"/>
-            </StackPanel>
         </Grid>
     </Grid>
 </UserControl>

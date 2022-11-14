@@ -1,10 +1,5 @@
 ﻿using Prism.Events;
 using Prism.Mvvm;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WPF_MoviesDB.Infrastructure.Events;
 using WPF_MoviesDB.Infrastructure.Models;
 
@@ -13,6 +8,7 @@ namespace Content.ViewModels
     public class FavouritesListViewModel : BindableBase
     {
         private string _message;
+
         public string Message
         {
             get
@@ -26,6 +22,7 @@ namespace Content.ViewModels
         }
 
         private string _genre;
+
         public string Genre
         {
             get

@@ -1,13 +1,13 @@
-﻿using Movies;
+﻿using Content;
+using Content.ViewModels;
+using Dialogs;
 using Genres;
+using Movies;
 using Prism.DryIoc;
 using Prism.Ioc;
 using Prism.Modularity;
 using System.Windows;
 using WPF_MoviesDB.Infrastructure.Services;
-using Content.ViewModels;
-using Content;
-using Dialogs;
 
 namespace WPF_MoviesDB
 {
