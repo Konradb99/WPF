@@ -13,7 +13,6 @@ namespace WPF_MoviesDB.Infrastructure.DatabaseEntities
         public string release_date { get; set; }
         public double vote { get; set; }
         public string overview { get; set; }
-        public List<string> genres { get; set; }
         public string backdrop_path { get; set; }
         public string poster_path { get; set; }
     }

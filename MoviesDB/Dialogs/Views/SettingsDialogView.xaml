@@ -32,7 +32,7 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <TextBlock Text="{Binding Message}"
+            <TextBlock Text="{Binding Movie.Title}"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
                            Grid.Row="0"

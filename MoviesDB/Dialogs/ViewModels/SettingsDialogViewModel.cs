@@ -2,20 +2,16 @@
 using Prism.Mvvm;
 using Prism.Services.Dialogs;
 using System;
+using WPF_MoviesDB.Infrastructure.DatabaseEntities;
+using WPF_MoviesDB.Infrastructure.Models;
+using WPF_MoviesDB.Infrastructure.Repositories;
 
 namespace Dialogs.ViewModels
 {
     public class SettingsDialogViewModel : BindableBase, IDialogAware
     {
         public DelegateCommand<string> CloseDialogCommand { get; private set; }
-
-        private string _message;
-
-        public string Message
-        {
-            get { return _message; }
-            set { SetProperty(ref _message, value); }
-        }
+        private readonly IMovieRepository _movieRepository;
 
         private string _title = "Notification";
 
@@ -25,9 +21,21 @@ namespace Dialogs.ViewModels
             set { SetProperty(ref _title, value); }
         }
 
-        public SettingsDialogViewModel()
+        private Movie _movie;
+
+        public Movie Movie
+        {
+            get { return _movie; }
+            set
+            {
+                SetProperty(ref _movie, value);
+            }
+        }
+
+        public SettingsDialogViewModel(IMovieRepository movieRepository)
         {
             CloseDialogCommand = new DelegateCommand<string>(CloseDialog);
+            _movieRepository = movieRepository;
         }
 
         public event Action<IDialogResult> RequestClose;
@@ -55,7 +63,16 @@ namespace Dialogs.ViewModels
 
         public virtual void OnDialogOpened(IDialogParameters parameters)
         {
-            Message = parameters.GetValue<string>("message");
+            MovieEntity movieToAdd = new()
+            {
+                title = parameters.GetValue<string>("title"),
+                overview = parameters.GetValue<string>("overview"),
+                backdrop_path = parameters.GetValue<string>("backdrop_path"),
+                poster_path = parameters.GetValue<string>("poster_path"),
+                release_date = parameters.GetValue<string>("release_date"),
+                vote = Double.Parse(parameters.GetValue<string>("vote"))
+            };
+            _movieRepository.AddMovieToFavourites(movieToAdd);
         }
     }
 }

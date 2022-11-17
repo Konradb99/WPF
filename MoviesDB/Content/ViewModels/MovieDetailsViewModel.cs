@@ -77,7 +77,14 @@ namespace Content.ViewModels
 
         private void OpenDialog()
         {
-            _dialogService.ShowDialog("SettingsDialog", new DialogParameters($"message={Title}"), r =>
+            var dialogParams = new DialogParameters();
+            dialogParams.Add("title", Movie.title);
+            dialogParams.Add("vote", Movie.vote_average);
+            dialogParams.Add("backdrop_path", Movie.backdrop_path);
+            dialogParams.Add("poster_path", Movie.poster_path);
+            dialogParams.Add("release_date", Movie.release_date);
+            dialogParams.Add("overview", Movie.overview);
+            _dialogService.ShowDialog("SettingsDialog", dialogParams, r =>
             {
             });
         }

@@ -7,6 +7,7 @@ using Prism.DryIoc;
 using Prism.Ioc;
 using Prism.Modularity;
 using System.Windows;
+using WPF_MoviesDB.Infrastructure.Repositories;
 using WPF_MoviesDB.Infrastructure.Services;
 
 namespace WPF_MoviesDB
@@ -20,6 +21,7 @@ namespace WPF_MoviesDB
         {
             containerRegistry.Register<IGenresService, GenresService>();
             containerRegistry.Register<IMoviesService, MoviesService>();
+            containerRegistry.Register<IMovieRepository, MovieRepository>();
             containerRegistry.Register<FavouritesListViewModel>();
             containerRegistry.Register<MoviesListViewModel>();
         }
